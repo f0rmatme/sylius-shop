@@ -33,6 +33,8 @@ jobs:
             [ "$VERSION" == "master" ] && VERSION=latest
 
             echo VERSION=$VERSION
+            
+            service docker status
 
             docker-compose -f docker-compose.yml -f docker-compose.build.prod.yml build --build-arg TAG_VERSION=$VERSION
 
